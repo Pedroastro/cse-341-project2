@@ -3,10 +3,10 @@ const utilities = require('../utilities');
 
 router.use('/', require('./swagger'));
 
-router.get('/', (req, res) => {
+router.get('/', utilities.asyncHandler((req, res) => {
   //#swagger.tags=['Hello World']
   res.send('Hello World');
-});
+}));
 
 router.use('/movies', utilities.asyncHandler(require('./movies')));
 
