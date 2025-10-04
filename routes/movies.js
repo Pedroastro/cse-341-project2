@@ -2,32 +2,15 @@ const express = require('express');
 const { movieValidation } = require('../utilities/validation');
 const router = express.Router();
 const moviesController = require('../controllers/movies');
-const { asyncHandler } = require('../utilities');
 
-router.get('/', asyncHandler(moviesController.getAll));
+router.get('/', moviesController.getAll);
 
-router.get(
-  '/:id',
-  movieValidation.id,
-  asyncHandler(moviesController.getSingle),
-);
+router.get('/:id', movieValidation.id, moviesController.getSingle);
 
-router.post(
-  '/',
-  movieValidation.create,
-  asyncHandler(moviesController.createMovie),
-);
+router.post('/', movieValidation.create, moviesController.createMovie);
 
-router.put(
-  '/:id',
-  movieValidation.update,
-  asyncHandler(moviesController.updateMovie),
-);
+router.put('/:id', movieValidation.update, moviesController.updateMovie);
 
-router.delete(
-  '/:id',
-  movieValidation.id,
-  asyncHandler(moviesController.deleteMovie),
-);
+router.delete('/:id', movieValidation.id, moviesController.deleteMovie);
 
 module.exports = router;

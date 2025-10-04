@@ -8,9 +8,9 @@ router.get('/', (req, res) => {
   res.send('Hello World');
 });
 
-router.use('/movies', require('./movies'));
+router.use('/movies', utilities.asyncHandler(require('./movies')));
 
-router.use('/tv-shows', require('./tv-shows'));
+router.use('/tv-shows', utilities.asyncHandler(require('./tv-shows')));
 
 router.use((err, req, res, next) => {
   utilities.logErrorToFile(err);
