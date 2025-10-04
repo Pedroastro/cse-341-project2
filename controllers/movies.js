@@ -1,5 +1,6 @@
 const mongodb = require('../data/database');
 const ObjectId = require('mongodb').ObjectId;
+const { validationResult } = require('express-validator');
 
 const getAll = async (req, res) => {
   //#swagger.tags = ['Movies']
@@ -12,6 +13,10 @@ const getAll = async (req, res) => {
 
 const getSingle = async (req, res) => {
   //#swagger.tags = ['Movies']
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    return res.status(400).json({ errors: errors.array() });
+  }
   const movieId = new ObjectId(req.params.id);
   const result = await mongodb
     .getDatabase()
@@ -26,6 +31,10 @@ const getSingle = async (req, res) => {
 
 const createMovie = async (req, res) => {
   //#swagger.tags = ['Movies']
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    return res.status(400).json({ errors: errors.array() });
+  }
   const movie = {
     title: req.body.title,
     director: req.body.director,
@@ -51,6 +60,10 @@ const createMovie = async (req, res) => {
 
 const updateMovie = async (req, res) => {
   //#swagger.tags = ['Movies']
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    return res.status(400).json({ errors: errors.array() });
+  }
   const movieId = new ObjectId(req.params.id);
   const movie = {
     title: req.body.title,
@@ -77,6 +90,10 @@ const updateMovie = async (req, res) => {
 
 const deleteMovie = async (req, res) => {
   //#swagger.tags = ['Movies']
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    return res.status(400).json({ errors: errors.array() });
+  }
   const movieId = new ObjectId(req.params.id);
   const response = await mongodb
     .getDatabase()

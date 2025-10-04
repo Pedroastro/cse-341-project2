@@ -26,75 +26,25 @@
     },
     "/movies/": {
       "get": {
-        "tags": [
-          "Movies"
-        ],
         "description": "",
-        "produces": [
-          "application/json"
-        ],
         "responses": {
-          "200": {
-            "description": "OK"
+          "default": {
+            "description": ""
           }
         }
       },
       "post": {
-        "tags": [
-          "Movies"
-        ],
         "description": "",
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "title": {
-                  "example": "any"
-                },
-                "director": {
-                  "example": "any"
-                },
-                "releaseYear": {
-                  "example": "any"
-                },
-                "genre": {
-                  "example": "any"
-                },
-                "durationMinutes": {
-                  "example": "any"
-                },
-                "rating": {
-                  "example": "any"
-                },
-                "language": {
-                  "example": "any"
-                }
-              }
-            }
-          }
-        ],
         "responses": {
-          "204": {
-            "description": "No Content"
-          },
-          "500": {
-            "description": "Internal Server Error"
+          "default": {
+            "description": ""
           }
         }
       }
     },
     "/movies/{id}": {
       "get": {
-        "tags": [
-          "Movies"
-        ],
         "description": "",
-        "produces": [
-          "application/json"
-        ],
         "parameters": [
           {
             "name": "id",
@@ -104,15 +54,12 @@
           }
         ],
         "responses": {
-          "200": {
-            "description": "OK"
+          "default": {
+            "description": ""
           }
         }
       },
       "put": {
-        "tags": [
-          "Movies"
-        ],
         "description": "",
         "parameters": [
           {
@@ -120,51 +67,15 @@
             "in": "path",
             "required": true,
             "type": "string"
-          },
-          {
-            "name": "body",
-            "in": "body",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "title": {
-                  "example": "any"
-                },
-                "director": {
-                  "example": "any"
-                },
-                "releaseYear": {
-                  "example": "any"
-                },
-                "genre": {
-                  "example": "any"
-                },
-                "durationMinutes": {
-                  "example": "any"
-                },
-                "rating": {
-                  "example": "any"
-                },
-                "language": {
-                  "example": "any"
-                }
-              }
-            }
           }
         ],
         "responses": {
-          "204": {
-            "description": "No Content"
-          },
-          "500": {
-            "description": "Internal Server Error"
+          "default": {
+            "description": ""
           }
         }
       },
       "delete": {
-        "tags": [
-          "Movies"
-        ],
         "description": "",
         "parameters": [
           {
@@ -175,89 +86,33 @@
           }
         ],
         "responses": {
-          "204": {
-            "description": "No Content"
-          },
-          "500": {
-            "description": "Internal Server Error"
+          "default": {
+            "description": ""
           }
         }
       }
     },
     "/tv-shows/": {
       "get": {
-        "tags": [
-          "TV Shows"
-        ],
         "description": "",
-        "produces": [
-          "application/json"
-        ],
         "responses": {
-          "200": {
-            "description": "OK"
+          "default": {
+            "description": ""
           }
         }
       },
       "post": {
-        "tags": [
-          "TV Shows"
-        ],
         "description": "",
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "title": {
-                  "example": "any"
-                },
-                "creator": {
-                  "example": "any"
-                },
-                "startYear": {
-                  "example": "any"
-                },
-                "endYear": {
-                  "example": "any"
-                },
-                "seasons": {
-                  "example": "any"
-                },
-                "episodes": {
-                  "example": "any"
-                },
-                "genre": {
-                  "example": "any"
-                },
-                "language": {
-                  "example": "any"
-                }
-              }
-            }
-          }
-        ],
         "responses": {
-          "204": {
-            "description": "No Content"
-          },
-          "500": {
-            "description": "Internal Server Error"
+          "default": {
+            "description": ""
           }
         }
       }
     },
     "/tv-shows/{id}": {
       "get": {
-        "tags": [
-          "TV Shows"
-        ],
         "description": "",
-        "produces": [
-          "application/json"
-        ],
         "parameters": [
           {
             "name": "id",
@@ -267,15 +122,12 @@
           }
         ],
         "responses": {
-          "200": {
-            "description": "OK"
+          "default": {
+            "description": ""
           }
         }
       },
       "put": {
-        "tags": [
-          "TV Shows"
-        ],
         "description": "",
         "parameters": [
           {
@@ -283,54 +135,15 @@
             "in": "path",
             "required": true,
             "type": "string"
-          },
-          {
-            "name": "body",
-            "in": "body",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "title": {
-                  "example": "any"
-                },
-                "creator": {
-                  "example": "any"
-                },
-                "startYear": {
-                  "example": "any"
-                },
-                "endYear": {
-                  "example": "any"
-                },
-                "seasons": {
-                  "example": "any"
-                },
-                "episodes": {
-                  "example": "any"
-                },
-                "genre": {
-                  "example": "any"
-                },
-                "language": {
-                  "example": "any"
-                }
-              }
-            }
           }
         ],
         "responses": {
-          "204": {
-            "description": "No Content"
-          },
-          "500": {
-            "description": "Internal Server Error"
+          "default": {
+            "description": ""
           }
         }
       },
       "delete": {
-        "tags": [
-          "TV Shows"
-        ],
         "description": "",
         "parameters": [
           {
@@ -341,11 +154,8 @@
           }
         ],
         "responses": {
-          "204": {
-            "description": "No Content"
-          },
-          "500": {
-            "description": "Internal Server Error"
+          "default": {
+            "description": ""
           }
         }
       }

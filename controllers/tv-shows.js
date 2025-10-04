@@ -1,5 +1,6 @@
 const mongodb = require('../data/database');
 const ObjectId = require('mongodb').ObjectId;
+const { validationResult } = require('express-validator');
 
 const getAll = async (req, res) => {
   //#swagger.tags = ['TV Shows']
@@ -12,6 +13,10 @@ const getAll = async (req, res) => {
 
 const getSingle = async (req, res) => {
   //#swagger.tags = ['TV Shows']
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    return res.status(400).json({ errors: errors.array() });
+  }
   const tvShowId = new ObjectId(req.params.id);
   const result = await mongodb
     .getDatabase()
@@ -26,6 +31,10 @@ const getSingle = async (req, res) => {
 
 const createTvShow = async (req, res) => {
   //#swagger.tags = ['TV Shows']
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    return res.status(400).json({ errors: errors.array() });
+  }
   const tvShow = {
     title: req.body.title,
     creator: req.body.creator,
@@ -54,6 +63,10 @@ const createTvShow = async (req, res) => {
 
 const updateTvShow = async (req, res) => {
   //#swagger.tags = ['TV Shows']
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    return res.status(400).json({ errors: errors.array() });
+  }
   const tvShowId = new ObjectId(req.params.id);
   const tvShow = {
     title: req.body.title,
@@ -83,6 +96,10 @@ const updateTvShow = async (req, res) => {
 
 const deleteTvShow = async (req, res) => {
   //#swagger.tags = ['TV Shows']
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    return res.status(400).json({ errors: errors.array() });
+  }
   const tvShowId = new ObjectId(req.params.id);
   const response = await mongodb
     .getDatabase()
