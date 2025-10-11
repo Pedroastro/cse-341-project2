@@ -31,6 +31,7 @@ const getSingle = async (req, res) => {
 
 const createTvShow = async (req, res) => {
   //#swagger.tags = ['TV Shows']
+  //#swagger.description = 'Requires authentication. To access, log in via the /login endpoint.'
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
     return res.status(400).json({ errors: errors.array() });
@@ -63,6 +64,7 @@ const createTvShow = async (req, res) => {
 
 const updateTvShow = async (req, res) => {
   //#swagger.tags = ['TV Shows']
+  //#swagger.description = 'Requires authentication. To access, log in via the /login endpoint.'
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
     return res.status(400).json({ errors: errors.array() });
@@ -96,6 +98,7 @@ const updateTvShow = async (req, res) => {
 
 const deleteTvShow = async (req, res) => {
   //#swagger.tags = ['TV Shows']
+  //#swagger.description = 'Requires authentication. To access, log in via the /login endpoint.'
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
     return res.status(400).json({ errors: errors.array() });

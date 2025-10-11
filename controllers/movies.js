@@ -31,6 +31,7 @@ const getSingle = async (req, res) => {
 
 const createMovie = async (req, res) => {
   //#swagger.tags = ['Movies']
+  //#swagger.description = 'Requires authentication. To access, log in via the /login endpoint.'
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
     return res.status(400).json({ errors: errors.array() });
@@ -60,6 +61,7 @@ const createMovie = async (req, res) => {
 
 const updateMovie = async (req, res) => {
   //#swagger.tags = ['Movies']
+  //#swagger.description = 'Requires authentication. To access, log in via the /login endpoint.'
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
     return res.status(400).json({ errors: errors.array() });
@@ -90,6 +92,7 @@ const updateMovie = async (req, res) => {
 
 const deleteMovie = async (req, res) => {
   //#swagger.tags = ['Movies']
+  //#swagger.description = 'Requires authentication. To access, log in via the /login endpoint.'
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
     return res.status(400).json({ errors: errors.array() });
